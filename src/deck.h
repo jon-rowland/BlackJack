@@ -1,0 +1,31 @@
+#ifndef DECK_H_
+#define DECK_H_
+
+/*
+ * Multiple by however many
+ * deck you want to play with
+ */
+#define DECK_SIZE 52
+
+extern char *ranks[];
+extern char *suits[];
+
+struct Card
+{
+  int rank;
+  int suit;
+};
+
+struct deck Deck
+{
+  struct Card cards[DECK_SIZE];
+  int top;
+};
+
+extern struct Deck deck;
+
+void build_deck(void);
+int  random_num(int range);
+void swap_index(int a, int b);
+void knuth(void);
+void check_deck(void);
